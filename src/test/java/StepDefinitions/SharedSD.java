@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import util.ConfigReader;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class SharedSD {
@@ -16,7 +17,7 @@ public class SharedSD {
 	private static WebDriver driver = null;
 
 	@Before("@web")
-	public static void before() {
+	public static void before() throws IOException {
 
 		ConfigReader configReader = new ConfigReader();
 		/*System.setProperty("webdriver.chrome.driver",

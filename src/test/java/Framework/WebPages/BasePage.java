@@ -17,10 +17,10 @@ import java.time.Duration;
 
 
 public class BasePage {
-
+static WebDriver driver = SharedSD.getDriver();
 	// This is the most common wait function used in selenium
 	public static WebElement webAction(final By locator) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(SharedSD.getDriver())
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(50))
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class)
@@ -41,19 +41,22 @@ public class BasePage {
 	public void clickOn(By locator) {
 		webAction(locator).click();
 
-		//SharedSD.getDriver().findElement(locator).click();
+		//driver.findElement(locator).click();
 	}
 
 	public void setValue(By locator, String value) {
 		webAction(locator).sendKeys(value);
+		//driver.findElement(locator)
 	}
 	public String getValueFromElement(By locator) {
 		return webAction(locator).getText();
+		//driver.findElement(locator)
 	}
 
 
 	public String getTextFromElement(By locator) {
 		return webAction(locator).getText();
+		//driver.findElement(locator)
 	}
 
 	public boolean isElementDisplayed(By locator) {

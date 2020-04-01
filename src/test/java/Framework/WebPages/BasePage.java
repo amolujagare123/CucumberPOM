@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Wait;
 
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 
@@ -57,6 +59,20 @@ static WebDriver driver = SharedSD.getDriver();
 	public String getTextFromElement(By locator) {
 		return webAction(locator).getText();
 		//driver.findElement(locator)
+	}
+
+	public ArrayList<String> getTextFromList(By locator)
+	{
+		List<WebElement> listElements= driver.findElements(locator);
+
+		ArrayList<String> stringList = new ArrayList<>();
+
+		for(int i=0;i<listElements.size();i++)
+		{
+			stringList.add(listElements.get(i).getText());
+		}
+
+		return stringList;
 	}
 
 	public boolean isElementDisplayed(By locator) {

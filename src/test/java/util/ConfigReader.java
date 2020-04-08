@@ -16,7 +16,7 @@ public class ConfigReader {
 
         Properties prop = new Properties();
         InputStream input
-                = new FileInputStream("C:\\Users\\PC\\IdeaProjects\\Cucumber\\Resources\\Config.properties");
+                = new FileInputStream("C:\\Users\\PC\\IdeaProjects\\CucumberPOM\\Resources\\Config.properties");
 
             // load a properties file
             prop.load(input);

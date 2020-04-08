@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
         features="Features",
 
-         tags="@DarkskyTimelineCompare",
+         tags="@VerifyiSuiteHotel",
         plugin={"pretty","html:target/cucumber","json:target/cucumber.json",
                 "junit:target/cuckes.xml"},
 

@@ -13,3 +13,15 @@ Scenario: Verify Current Temperature should not be greater or less than the Temp
   Scenario: Verify timline is displayed in correct format
   Given I am on Darksky Home Page
   Then I verify timeline is displayed with two hours incremented
+
+  @DarkSkyDayTemp
+  Scenario: Verify individual day temp timeline
+   Given I am on Darksky Home Page
+   When I expand todays timeline
+   Then I verify lowest and highest temp is displayed correctly
+
+  @VerifyLogin
+   Scenario: Verify invalid error message on Login Page
+    Given I am on the darksky Login page
+    When I click on Login button
+    Then I verify I am on Login page by asserting Login page title
